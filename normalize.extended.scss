@@ -4,7 +4,8 @@
 // c) The point where you can't make them act the same, might be the point where you remove rules instead of add.
 
 form {
-  position: relative; // Preventative for avoiding unintended overlays.
+  /* Preventative for avoiding unintended overlays. */
+  position: relative;
 }
 
 /* Standardize majority element alignment with adjacent text. */
@@ -16,7 +17,7 @@ input, textarea, select, button {
   padding: 0.1rem 0.5rem;
 }
 
-// Improve vertical alignment consistency. */
+/* Improve vertical alignment consistency. */
 label {
 
   /*
@@ -53,7 +54,6 @@ label {
   }
 }
 
-
 /* Improve consistency and appearance. */
 select {
 
@@ -84,7 +84,6 @@ button {
   vertical-align: text-top;
   margin-top: -0.15em;
 }
-
 
 /* Make behavior same as a textarea. */
 textarea, select[size], select[multiple] {
@@ -122,15 +121,23 @@ optgroup {
   }
 }
 
-button[disabled],
-input[disabled],
-select[disabled],
-select[disabled] option,
-select[disabled] optgroup,
-option[disabled],
-textarea[disabled] {
-  user-select: none;
-  cursor: default;
+button,
+input[type=button],
+input[type=submit],
+input[type=button],
+select,
+option {
+  &[disabled] {
+    user-select: none;
+    cursor: default;
+  }
+}
+
+input[type=text], textarea {
+  &[disabled] {
+    /* Ensure that by default a user can select the text even if they can't edit it. */
+    cursor: text;
+  }
 }
 
 table, thead, tbody, tfoot, tr, td, th {
