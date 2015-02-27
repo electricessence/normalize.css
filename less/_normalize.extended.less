@@ -7,14 +7,14 @@ form {
   /* Preventative for avoiding unintended overlays. */
   position: relative;
 }
-
-/* Standardize majority element alignment with adjacent text. */
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
+  /* Standardize majority element alignment with adjacent text. */
   vertical-align: baseline;
-  font-size: 100%;
-  font-family: inherit;
-
-  padding: 0.1rem 0.5rem;
+  /* Providing a default makes each element align the same. */
+  padding: 0.1rem 0;
 }
 
 /* Improve vertical alignment consistency. */
@@ -121,24 +121,7 @@ optgroup {
   }
 }
 
-button,
-input[type=button],
-input[type=submit],
-input[type=button],
-select,
-option {
-  &[disabled] {
-    user-select: none;
-    cursor: default;
-  }
-}
 
-input[type=text], textarea {
-  &[disabled] {
-    /* Ensure that by default a user can select the text even if they can't edit it. */
-    cursor: text;
-  }
-}
 
 table, thead, tbody, tfoot, tr, td, th {
   border: 0 solid;

@@ -1,13 +1,13 @@
 {
-  "name": "normalize-css",
-  "version": "3.0.2",
-  "main": "normalize.css",
-  "author": "Nicolas Gallagher",
+  "name": "normalize-less",
+  "version": "1.0.0",
+  "main": "normalize.less",
+  "author": "Oren Ferrari",
   "ignore": [
     "CHANGELOG.md",
     "CONTRIBUTING.md",
     "component.json",
     "package.json",
-    "test.html"
+    "test"
   ]
 }

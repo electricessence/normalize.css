@@ -1,16 +1,17 @@
 {
-  "name": "normalize.css",
-  "version": "3.0.2",
-  "description": "Normalize.css as a node packaged module",
-  "style": "normalize.css",
-  "files": [
-    "normalize.css"
-  ],
-  "homepage": "http://necolas.github.io/normalize.css",
+  "name": "normalize.less",
+  "version": "1.0.0",
+  "description": "Normalize.less as a node packaged module",
   "repository": {
     "type": "git",
-    "url": "git://github.com/necolas/normalize.css.git"
+    "url": "git://github.com/electricessence/normalize.css.git"
   },
-  "author": "Nicolas Gallagher",
-  "license": "MIT"
+  "author": "Oren Ferrari",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-less": "^3.0.1",
+    "gulp-sourcemaps": "^1.5.0",
+    "less-plugin-clean-css": "^1.5.0"
+  }
 }
