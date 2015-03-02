@@ -22,7 +22,7 @@ c) The point where you can't make them act the same, might be the point where yo
 
 No other styles should come before Normalize.css.
 
-It is recommended that you include the `normalize.less` file as untouched
+It is recommended that you include the `normalize.css` file as untouched
 library code.
 
 ## What does it do?
