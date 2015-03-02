@@ -7,10 +7,28 @@
 
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
+	border-spacing: 0; // AKA cell spacing.
 }
 
 td,
 th {
-	padding: 0;
+	padding: 0; // AKA cell padding.
+}
+
+table, thead, tbody, tfoot, tr, td, th {
+	border: 0 solid;
+}
+
+// Caption behavior normalization.
+table {
+
+	> caption {
+		h1, h2, h3, h4, h5, h6 {
+			/* WARNING:
+					2015-Feb: Safari doesn't obey outside margins (first-top and last-bottom).
+					Use padding instead if needed. */
+			// Make act the same here. Overrides will be needed later.
+			margin: 0;
+		}
+	}
 }

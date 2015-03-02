@@ -237,9 +237,9 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+html input[type=button],
+input[type=reset],
+input[type=submit] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -248,8 +248,32 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
+input[type=text][readonly],
+textarea[readonly] {
+  /* Ensure that by default a user can select the text even if they can't edit it. */
+  -webkit-user-select: text;
+  /* Chrome all / Safari all */
+  -moz-user-select: text;
+  /* Firefox all */
+  -ms-user-select: text;
+  /* IE 10+ */
+  user-select: text;
+  cursor: text;
+}
 button[disabled],
-html input[disabled] {
+input[disabled],
+html input[disabled],
+textarea[disabled],
+select[disabled],
+optgroup[disabled],
+option[disabled] {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
   cursor: default;
 }
 /**
@@ -291,7 +315,7 @@ input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 /**
- * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 1. Address `appearance` set to `search-field` in Safari and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
  *    (include `-moz` to future-proof).
  */
@@ -306,7 +330,7 @@ input[type="search"] {
 /**
  * Remove inner padding and search cancel button in Safari and Chrome on OS X.
  * Safari (but not Chrome) clips the cancel button when the search input has
- * padding (and `textfield` appearance).
+ * padding (and `text-field` appearance).
  */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
@@ -331,7 +355,7 @@ legend {
   /* 2 */
 }
 /**
- * Remove default vertical scrollbar in IE 8/9/10/11.
+ * Remove default vertical scroll-bar in IE 8/9/10/11.
  */
 textarea {
   overflow: auto;
@@ -342,6 +366,140 @@ textarea {
  */
 optgroup {
   font-weight: bold;
+}
+form {
+  /* Preventative for avoiding unintended overlays. */
+  position: relative;
+}
+input,
+textarea,
+select,
+button {
+  /* Standardize majority element alignment with adjacent text. */
+  vertical-align: baseline;
+  /* Providing a default makes each element align the same. */
+  padding: 0.1rem 0;
+}
+/* Improve vertical alignment consistency. */
+label {
+  /*
+   * Converting to inline block makes the layout more consistent across different browsers.
+   * Instead of changing the 'margin-top' of the field, change how the label aligns with it.
+   * label as 'inline-block' responds better to varied situations especially mobile, etc.
+   */
+}
+label,
+label > span {
+  display: inline-block;
+}
+label > * {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+label > span {
+  margin-top: 0.2rem;
+}
+label > span + textarea {
+  margin-top: 0.15rem;
+}
+label > span + select[size] > *:first-child,
+label > span + select[multiple] > *:first-child {
+  margin-top: -0.05em;
+}
+/* Improve consistency and appearance. */
+select {
+  /* Extra horizontal padding for first level elements. */
+  /* All options need a bit of padding including second level. */
+}
+select > option,
+select > optgroup {
+  padding: 0 0.5rem;
+}
+select option {
+  padding-top: 0.15rem;
+  padding-bottom: 0.05rem;
+  padding-right: 0.5rem;
+}
+select optgroup {
+  padding-top: 1ex;
+}
+select optgroup:first-child {
+  padding-top: 0.15rem;
+}
+/* This makes multi-line buttons behave more like baseline in all browsers. */
+button {
+  vertical-align: text-top;
+  margin-top: -0.15em;
+}
+/* Make behavior same as a textarea. */
+textarea,
+select[size],
+select[multiple] {
+  /* Firefox aligns to the first line in the text area if using 'baseline',
+	 * but other browsers look as if baseline is the bottom of the element. */
+  vertical-align: top;
+}
+textarea {
+  /* Helps align the first line of text to match what input[text] does. */
+  margin-bottom: 1ex;
+  line-height: inherit;
+}
+input[type=checkbox],
+input[type=radio] {
+  /* Adding this ensures that Checkboxes and radio buttons:
+		 * 1) align correctly to text at different text sizes and zoom levels.
+		 * 2) scale appropriately as text gets smaller instead of retaining a single pixel height. */
+  height: 0.95em;
+  padding: 0;
+}
+input[type=range] {
+  vertical-align: middle;
+  margin: 0;
+}
+optgroup {
+  /* Kill phantom spacing and dotted border that appears in Firefox. */
+}
+optgroup::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/* Default form behavior. */
+input[type=text],
+textarea,
+select {
+  outline: 0;
+  text-align: left;
+  background-clip: padding-box;
+  -webkit-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+button,
+input[type=button],
+input[type=submit],
+input[type=reset],
+input[type=text],
+textarea,
+select {
+  background-clip: padding-box;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+/* Button transition */
+input[type=button],
+input[type=submit],
+input[type=reset] button {
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  border: 1px solid lightgray;
+}
+button[disabled],
+input[disabled],
+select[disabled],
+select[disabled] option,
+select[disabled] optgroup,
+textarea[disabled] {
+  box-shadow: none;
+  opacity: 0.6;
 }
 /* Tables
    ========================================================================== */
@@ -355,4 +513,24 @@ table {
 td,
 th {
   padding: 0;
+}
+table,
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border: 0 solid;
+}
+table > caption h1,
+table > caption h2,
+table > caption h3,
+table > caption h4,
+table > caption h5,
+table > caption h6 {
+  /* WARNING:
+					2015-Feb: Safari doesn't obey outside margins (first-top and last-bottom).
+					Use padding instead if needed. */
+  margin: 0;
 }

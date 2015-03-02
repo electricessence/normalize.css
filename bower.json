@@ -8,6 +8,12 @@
     "CONTRIBUTING.md",
     "component.json",
     "package.json",
+    "gulpfile.js",
+    "less",
     "test"
-  ]
+  ],
+  "devDependencies": {
+    "css-helpers": "https://github.com/electricessence/css-helpers.git",
+    "jquery": "~2.1.3"
+  }
 }

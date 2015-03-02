@@ -17,12 +17,12 @@ c) The point where you can't make them act the same, might be the point where yo
 
 ## Install
 
-* [Bower](http://bower.io/): `bower install --save normalize.css`
+* [Bower](http://bower.io/): `bower install --save https://github.com/electricessence/normalize.less.git`
 
 
 No other styles should come before Normalize.css.
 
-It is recommended that you include the `normalize.css` file as untouched
+It is recommended that you include the `normalize.less` file as untouched
 library code.
 
 ## What does it do?

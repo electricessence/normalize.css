@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8"/>
+	<title>HTML Form Elements</title>
+	<link rel="stylesheet" type="text/css" href="../bower_components/css-helpers/spacing.css"/>
+	<link rel="stylesheet" type="text/css" href="../bower_components/css-helpers/alignment.css"/>
+	<link rel="stylesheet" type="text/css" href="../bower_components/css-helpers/table-cells.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css"/>
+	<link rel="stylesheet" type="text/css" href="form-element-layout-guide.css"/>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script>
+		function toggleDisabled(value) {
+			var D = "disabled";
+			var sel = $("tbody").find("input, button, select, textarea");
+			value ? sel.attr(D,D) : sel.removeAttr(D);
+		}
+		$(document).ready(function(){
+			$("select[multiple]").attr("size","7");
+		});
+	</script>
+</head>
+<body>
+
+<form>
+
+<fieldset>
+	<legend>Fieldset</legend>
+	<div>
+		<table class="themed nowrap cells-border-right-1px">
+			<caption class="align-left">
+				<div style="padding:2ex">
+					<h2>Form Elements</h2>
+					<h4>This sheet demonstrates variations of form layout and how style affects each variation.</h4>
+					<div><label><input type="checkbox" onclick="toggleDisabled(this.checked);"/> <span>Show Elements Disabled</span></label></div>
+				</div>
+			</caption>
+			<thead>
+				<tr>
+					<th></th>
+					<th colspan="2"><h3>Text Fields (Float Right)</h3></th>
+					<th colspan="2"><h3>Select Boxes</h3></th>
+					<th colspan="2"><h3>Check Boxes</h3></th>
+					<th colspan="2"><h3>Radio Buttons</h3></th>
+					<th colspan="2"><h3>Range</h3></th>
+				</tr>
+				<tr class="cells-padding-2ex">
+					<th></th>
+					<th>Single-Line</th>
+					<th>Multi-Line</th>
+					<th>Single-Line</th>
+					<th>Multi-Line</th>
+					<th>Right</th>
+					<th>Left</th>
+					<th>Right</th>
+					<th>Left</th>
+					<th>Right</th>
+					<th>Left</th>
+				</tr>
+			</thead>
+			<tbody class="cells-top cells-padding-2ex alt-row-color">
+				<tr>
+					<th align="right"><!--suppress HtmlFormInputWithoutLabel --><input type="text" class="invisible-width"/>Inline
+					</th>
+					<td align="right">
+						<div>
+							<label>
+								<span>Label</span>
+								<input type="text" size="10"
+								       value="Lorum Ipsum"/>
+							</label>
+							<input type="button" value="&lt;input&gt;"/>
+						</div>
+						<hr />
+						<div>
+							<label>
+								<span>Label</span>
+								<input type="text" size="10"
+								       value="Lorum Ipsum"/>
+							</label>
+							<input type="button" class="primary" value="&lt;input&gt;.primary"/>
+						</div>
+						<hr />
+						<div>
+							<label>
+								<input type="text" size="5"
+								       value="Lorum Ipsum"/>
+							</label>
+							<input type="button" value="&lt;input type=&quot;button&quot;/&gt;"/>
+						</div>
+						<hr />
+						<div>
+							<label>
+								<span>Label</span>
+								<input type="text" size="5"
+								       value="Lorum Ipsum"/>
+							</label>
+							<input type="submit" value="&lt;submit&gt;"/>
+						</div>
+						<hr />
+						<div>
+							<label>
+								<span>Label</span>
+								<input type="text" size="5"
+								       value="Lorum Ipsum"/>
+							</label>
+							<input type="reset" value="&lt;reset&gt;"/>
+						</div>
+						<hr />
+						<div>
+							<label>
+								<span>Label</span>
+								<input type="text" size="10"
+								       value="Lorum Ipsum"/>
+							</label>
+							<button>Multi-Line<br/>&lt;button&gt;</button>
+						</div>
+						<hr />
+						<div>
+							<span class="sample-component">Sample<br/>Component<br/><span class="note">(inline-block)</span></span>
+							<label>
+								<input type="text" size="5"
+								       value="Lorum Ipsum"/>
+							</label>
+							<button>&lt;button&gt;</button>
+						</div>
+					</td>
+					<td align="right">
+						<div>
+							<div>
+								<label>
+									<span>Label</span>
+									<textarea cols="10">Lorum Ipsum</textarea>
+								</label>
+							</div>
+							<div>
+								<input type="submit" value="&lt;submit&gt;"/>
+							</div>
+						</div>
+						<hr/>
+						<div>
+							<div>
+								<label><span>Label</span> <textarea cols="10">Lorum Ipsum</textarea></label>
+								<button>Multi-Line<br/>&lt;button&gt;</button>
+							</div>
+						</div>
+						<hr />
+
+						<div>
+							<label>
+								<span>Label</span>
+								<textarea cols="10">Lorum Ipsum</textarea>
+							</label>
+							<input type="button" value="&lt;input&gt;"/>
+						</div>
+						<hr />
+						<div>
+							<label>
+								<span>Label</span>
+								<textarea cols="10">Lorum Ipsum</textarea>
+							</label>
+							<button>&lt;button&gt;</button>
+						</div>
+					</td>
+					<td>
+						<div style="float:right">
+							<label><span>Text Label</span>
+								<select>
+									<option>- Select</option>
+									<optgroup label="Group A">
+										<option>Option A1</option>
+										<option>Option A2</option>
+									</optgroup>
+									<optgroup label="Group B">
+										<option>Option B1</option>
+										<option>Option B2</option>
+									</optgroup>
+								</select>
+							</label>
+						</div>
+					</td>
+					<td>
+						<div style="float:right">
+							<!--suppress HtmlFormInputWithoutLabel -->
+							<input type="text" class="invisible-width"/><label><span>Text Label</span>
+							<select multiple="multiple">
+								<optgroup label="Group A">
+									<option>Option A1</option>
+									<option>Option A2</option>
+								</optgroup>
+								<optgroup label="Group B">
+									<option>Option B1</option>
+									<option>Option B2</option>
+								</optgroup>
+							</select>
+						</label>
+						</div>
+					</td>
+					<td align="right">
+						<div><label><span>Label</span> <input type="checkbox"/></label></div>
+						<div><label><span>Label</span> <input type="checkbox"/></label></div>
+					</td>
+					<td>
+						<div><label><input type="checkbox"/> <span>Label</span></label></div>
+						<div><label><input type="checkbox"/> <span>Label</span></label></div>
+					</td>
+					<td align="right">
+						<div><label><span>Label</span> <input type="radio" name="radioRight"/></label></div>
+						<div><label><span>Label</span> <input type="radio" name="radioRight"/></label></div>
+					</td>
+					<td>
+						<div><label><input type="radio" name="radioLeft"/> <span>Label</span></label></div>
+						<div><label><input type="radio" name="radioLeft"/> <span>Label</span></label></div>
+					</td>
+					<td>
+						<div style="float:right"><label><span>Label</span> <input type="range" min="1" max="100"
+						                                                          value="50"/></label></div>
+					</td>
+					<td>
+						<div style="float:right"><label><input type="range" min="1" max="100" value="50"/>
+							<span>Label</span></label></div>
+					</td>
+				</tr>
+				<tr>
+					<th align="right"><!--suppress HtmlFormInputWithoutLabel --><input type="text" class="invisible-width"/>Inline
+						Split
+					</th>
+					<td>
+						<div style="float:right">
+							<label>
+								<span>Text<br/>Label</span>
+								<input type="text" size="10" value="Lorum Ipsum"/>
+							</label>
+						</div>
+					</td>
+					<td>
+						<div style="float:right"><label><span>Text<br/>Label</span> <textarea
+							cols="10">Lorum Ipsum</textarea></label></div>
+					</td>
+					<td>
+						<div style="float:right">
+							<label><span>Text<br/>Label</span>
+								<select>
+									<option>- Select</option>
+									<optgroup label="Group A">
+										<option>Option A1</option>
+										<option>Option A2</option>
+									</optgroup>
+									<optgroup label="Group B">
+										<option>Option B1</option>
+										<option>Option B2</option>
+									</optgroup>
+								</select>
+							</label>
+						</div>
+					</td>
+					<td>
+						<div style="float:right">
+							<label><span>Text<br/>Label</span>
+								<select multiple="multiple">
+									<optgroup label="Group A">
+										<option>Option A1</option>
+										<option>Option A2</option>
+									</optgroup>
+									<optgroup label="Group B">
+										<option>Option B1</option>
+										<option>Option B2</option>
+									</optgroup>
+								</select>
+							</label>
+						</div>
+					</td>
+					<td>
+						<div style="float:right"><label><span>Text<br/>Label</span> <input type="checkbox"/></label></div>
+					</td>
+					<td><label><input type="checkbox"/> <span>Text<br/>Label</span></label></td>
+					<td>
+						<div style="float:right"><label><span>Text<br/>Label</span> <input type="radio" name="inlineSplit"/></label>
+						</div>
+					</td>
+					<td><label><input type="radio" name="inlineSplit"/> <span>Text<br/>Label</span></label></td>
+					<td>
+						<div style="float:right"><label><span>Text<br/>Label</span> <input type="range" min="1" max="100"
+						                                                                   value="50"/></label></div>
+					</td>
+					<td>
+						<div style="float:right"><label><input type="range" min="1" max="100" value="50"/>
+							<span>Text<br/>Label</span></label></div>
+					</td>
+				</tr>
+				<tr>
+					<th align="right"><!--suppress HtmlFormInputWithoutLabel --><input type="text" class="invisible-width"/>Newline
+					</th>
+					<td>
+						<div style="float:right"><label><span>Text Label</span><br/><input type="text" size="10"
+						                                                                   value="Lorum Ipsum"/></label></div>
+					</td>
+					<td>
+						<div style="float:right"><label><span>Text Label</span><br/><textarea
+							cols="10">Lorum Ipsum</textarea></label></div>
+					</td>
+					<td>
+						<div style="float:right">
+							<label><span>Text Label</span><br/>
+								<select>
+									<option>- Select</option>
+									<optgroup label="Group A">
+										<option>Option A1</option>
+										<option>Option A2</option>
+									</optgroup>
+									<optgroup label="Group B">
+										<option>Option B1</option>
+										<option>Option B2</option>
+									</optgroup>
+								</select>
+							</label>
+						</div>
+					</td>
+					<td>
+						<div style="float:right">
+							<label><span>Text Label</span><br/>
+								<select multiple="multiple">
+									<optgroup label="Group A">
+										<option>Option A1</option>
+										<option>Option A2</option>
+									</optgroup>
+									<optgroup label="Group B">
+										<option>Option B1</option>
+										<option>Option B2</option>
+									</optgroup>
+								</select>
+							</label>
+						</div>
+					</td>
+					<td>
+						<div style="float:right"><label><span>Text Label</span><br/><input type="checkbox"/></label></div>
+					</td>
+					<td><label><input type="checkbox"/><br/><span>Text Label</span></label></td>
+					<td>
+						<div style="float:right"><label><span>Text Label</span><br/><input type="radio" name="newlineLeft"/></label>
+						</div>
+					</td>
+					<td><label><input type="radio" name="newlineLeft"/><br/><span>Text Label</span></label></td>
+					<td>
+						<div style="float:right"><label><span>Text Label</span><br/><input type="range" min="1" max="100"
+						                                                                   value="50"/></label></div>
+					</td>
+					<td>
+						<div style="float:right"><label><input type="range" min="1" max="100"
+						                                       value="50"/><br/><span>Text Label</span></label></div>
+					</td>
+				</tr>
+				<tr>
+					<th></th>
+					<td align="right"><label><span>Text Label</span><br/><input type="text" size="10"
+					                                                            value="Lorum Ipsum"/></label></td>
+					<td align="right"><label><span>Text Label</span><br/><textarea cols="10">Lorum Ipsum</textarea></label></td>
+					<td align="right">
+						<label><span>Text Label</span><br/>
+							<select>
+								<option>- Select</option>
+								<optgroup label="Group A">
+									<option>Option A1</option>
+									<option>Option A2</option>
+								</optgroup>
+								<optgroup label="Group B">
+									<option>Option B1</option>
+									<option>Option B2</option>
+								</optgroup>
+							</select>
+						</label>
+					</td>
+					<td align="right">
+						<label><span>Text Label</span><br/>
+							<select multiple="multiple">
+								<optgroup label="Group A">
+									<option>Option A1</option>
+									<option>Option A2</option>
+								</optgroup>
+								<optgroup label="Group B">
+									<option>Option B1</option>
+									<option>Option B2</option>
+								</optgroup>
+							</select>
+						</label>
+					</td>
+					<td align="right"><label><span>Text Label</span><br/><input type="checkbox"/></label></td>
+					<td align="right"><label><input type="checkbox"/><br/><span>Text Label</span></label></td>
+					<td align="right"><label><span>Text Label</span><br/><input type="radio" name="newlineRight"/></label></td>
+					<td align="right"><label><input type="radio" name="newlineRight"/><br/><span>Text Label</span></label></td>
+					<td align="right">
+						<div><label><span>Text Label</span><br/><input type="range" min="1" max="100" value="50"/></label></div>
+					</td>
+					<td align="right">
+						<div><label><input type="range" min="1" max="100" value="50"/><br/><span>Text Label</span></label></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</fieldset>
+
+</form>
+
+</body>
+</html>

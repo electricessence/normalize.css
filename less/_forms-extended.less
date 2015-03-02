@@ -1,0 +1,47 @@
+/* Default form behavior. */
+
+input[type=text],
+textarea,
+select {
+
+	outline: 0;
+	text-align: left;
+	background-clip: padding-box;
+
+	-webkit-transition: all 0.15s ease-out;
+	transition: all 0.15s ease-out;
+
+}
+
+button,
+input[type=button],
+input[type=submit],
+input[type=reset],
+input[type=text],
+textarea,
+select{
+	background-clip: padding-box;
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+
+
+/* Button transition */
+input[type=button],
+input[type=submit],
+input[type=reset]
+button {
+	-webkit-transition: all 0.1s ease-out;
+	transition: all 0.1s ease-out;
+	border: 1px solid lightgray;
+}
+
+button[disabled],
+input[disabled],
+select[disabled],
+select[disabled] option,
+select[disabled] optgroup,
+textarea[disabled] {
+	box-shadow: none;
+	opacity: 0.6;
+}

@@ -7,6 +7,7 @@ form {
   /* Preventative for avoiding unintended overlays. */
   position: relative;
 }
+
 input,
 textarea,
 select,
@@ -123,19 +124,3 @@ optgroup {
 
 
 
-table, thead, tbody, tfoot, tr, td, th {
-  border: 0 solid;
-}
-
-table {
-
-  > caption {
-    h1, h2, h3, h4, h5, h6 {
-      /* WARNING:
-					2015-Feb: Safari doesn't obey margins outside margins (first-top and last-bottom).
-					Use padding instead if needed. */
-      // Make act the same here. Overrides will be needed later.
-      margin: 0;
-    }
-  }
-}
