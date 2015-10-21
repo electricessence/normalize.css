@@ -9,7 +9,6 @@
     "component.json",
     "package.json",
     "gulpfile.js",
-    "less",
     "test"
   ],
   "devDependencies": {
