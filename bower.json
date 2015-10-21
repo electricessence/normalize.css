@@ -9,7 +9,8 @@
     "component.json",
     "package.json",
     "gulpfile.js",
-    "test"
+    "test",
+    ".idea"
   ],
   "devDependencies": {
     "css-helpers": "https://github.com/electricessence/css-helpers.git",
